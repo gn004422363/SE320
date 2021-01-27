@@ -1,0 +1,59 @@
+Man Tik Li - Assignment 3
+
+I deleted the ServerConnection instance in ServerConnection method and added it into requestFile method to pass the
+mocked sc to the parameter. The reason I changed it was simplest way to passing the collaborator. For edited code, see below:
+
+public String requestFile(String server, String file, ServerConnection conn) {
+        if (server == null)
+            throw new IllegalArgumentException("Null server address");
+        if (file == null)
+            throw new IllegalArgumentException("Null file");
+
+	// We'll use a StringBuilder to construct large strings more efficiently
+	// than repeated linear calls to string concatenation.
+        sb = new StringBuilder();
+
+        try {
+            if (conn.connectTo(server)) {
+                boolean validFile = conn.requestFileContents(file);
+                if (validFile) {
+                    while (conn.moreBytes()) {
+                        String tmp = conn.read();
+                        if (tmp != null) {
+                            sb.append(tmp);
+                        }
+                    }
+                    conn.closeConnection();
+                }
+            } else {
+                return null;
+            }
+        } catch (IOException e) {
+            return null;
+        }
+
+        String result = sb.toString();
+        lastResult = result;
+        return result;
+    }
+
+Test 2 - Failed (closeConnection() not called)
+After using all mokito mock test, I found bugs in the Client.java. The closedConnection method id not called, which
+resulted in failure testing. In test2 method, I verify that connectTo, and requestFileContents are called except
+closeConnection(). If the detect file name is invalid, closeConnection method should run. However, the test never
+reach it. Instead return "" message, it goes to catch statement and return null.
+
+Test 1 - Test that if the attempt to connectTo(...) the server fails, the client code calls no further methods on the connection.
+Test 2 - Test that if the connection succeeds but the file name is invalid, the client code calls no further methods on the connection except closeConnection. That is, the client code is expected to call closeConnection, but should not call other methods after it is known the file name is invalid.
+Test 3 - Test that if the connection succeeds and the file is valid and non-empty, that the connection asks for at least some part of the file.
+Test 4 - Test that if the connection succeeds and the file is valid but empty, the client returns an empty string.
+Test 5 - Test that if the client successfully reads part of a file, and then an IOException occurs before the file is fully read (i.e., moreBytes() has not returned false), the client still returns null to indicate an error, rather than returning a partial result.
+Test 6 - Test that if the initial server connection succeeds, then if a IOException occurs while retrieving the file (requesting, or reading bytes, either one) the client still explicitly closes the server connection.
+Test 7 - Test that the client simply returns unmodified the contents if it reads a file from the server starting with “override”, i.e., it doesn’t interpret a prefix of “override” as a trigger for some weird other behavior.
+Test 8 - If you’d like a cute example of why this is interesting, see Ken Thompson’s Turing Award Lecture, “Reflections on Trusting Trust.” (You don’t have to do this for the assignment.)
+Test 9 - If the server returns the file in three pieces (i.e., two calls to read() must be executed), the client concatenates them in the correct order).
+Test 10 - If read() ever returns null, the client treats this as the empty string (as opposed to appending “null” to the file contents read thus far, which is the default if you simply append null).
+Test 11 - Test that if any of the connection operations fails the first time it is executed with an IOException, the client returns null.
+Test 12 - Test that read() failed
+Test 13 - Test that moreBytes() failed
+Test 14 - Test that closeConnection() failed

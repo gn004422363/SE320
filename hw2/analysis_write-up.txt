@@ -1,0 +1,8 @@
+1.Please tell us what parts of the code seem more or less testable, taking into account both our discussions in class and your experience having tested the code.
+The program was less testable due to the number of private helper functions that only run when they reach preconditions. For the tree itself, it able to remap the nodes and keep the tree balanced. However, it is hard to determine the color when running the branches if it isRed(). Besides this, all other functions have great testability.
+
+2.This code uses assertions in a way that exploits some ideas of Design by Contract. Consider whether the use of Java assert statements to implement precondition checks and object invariants (i.e., the check() method) is (1) consistent, and (2) helpful for testing (as in, does it affect the amount of work you need to do to test that the BST is behaving correctly)?
+The use of the check method is going to be consistent. The check function checks the integrity of the red and black trees and it helps the process of testing.
+
+3.Assuming this code is part of a larger application (so, application internals), what about the testing above makes this open-box testing as opposed to closed-box? Give an answer that does not specifically rely on the fact that you used code coverage (if we removed the code coverage part of this assignment, you’d still be doing open-box testing).
+It is unnecessary to write the ideal test suite. It used to gives a heads up to the programmer how many lines they have covered.

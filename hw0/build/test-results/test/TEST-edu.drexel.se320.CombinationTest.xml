@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.drexel.se320.CombinationTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-10-09T02:25:22" hostname="Tiks-MacBook-Pro-16-Retina.local" time="0.391">
+  <properties/>
+  <testcase name="propertyTest1" classname="edu.drexel.se320.CombinationTest" time="0.205"/>
+  <testcase name="propertyTest2" classname="edu.drexel.se320.CombinationTest" time="0.11"/>
+  <testcase name="matcher1()" classname="edu.drexel.se320.CombinationTest" time="0.022"/>
+  <testcase name="matcher2()" classname="edu.drexel.se320.CombinationTest" time="0.001"/>
+  <testcase name="assertTest1()" classname="edu.drexel.se320.CombinationTest" time="0.001"/>
+  <testcase name="assertTest2()" classname="edu.drexel.se320.CombinationTest" time="0.0"/>
+  <testcase name="testExceptions1()" classname="edu.drexel.se320.CombinationTest" time="0.002"/>
+  <testcase name="testExceptions2()" classname="edu.drexel.se320.CombinationTest" time="0.0"/>
+  <system-out><![CDATA[timestamp = 2020-10-08T22:25:22.216638, CombinationTest:propertyTest1 = 
+                              |-------------------jqwik-------------------
+tries = 100                   | # of calls to property
+checks = 100                  | # of not rejected calls
+generation = EXHAUSTIVE       | parameters are exhaustively generated
+after-failure = PREVIOUS_SEED | use the previous seed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = 8327188582731276920    | random seed to reproduce generated values
+
+
+timestamp = 2020-10-08T22:25:22.332467, CombinationTest:propertyTest2 = 
+                              |-------------------jqwik-------------------
+tries = 420                   | # of calls to property
+checks = 420                  | # of not rejected calls
+generation = EXHAUSTIVE       | parameters are exhaustively generated
+after-failure = PREVIOUS_SEED | use the previous seed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = -8665395961873469045   | random seed to reproduce generated values
+
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

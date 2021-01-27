@@ -1,0 +1,24 @@
+Itimestamp = 2020-10-08T22:25:22.216638, CombinationTest:propertyTest1 = 
+K                              |-------------------jqwik-------------------
+7tries = 100                   | # of calls to property
+8checks = 100                  | # of not rejected calls
+Fgeneration = EXHAUSTIVE       | parameters are exhaustively generated
+6after-failure = PREVIOUS_SEED | use the previous seed
+8edge-cases#mode = MIXIN       | edge cases are mixed in
+=edge-cases#total = 0          | # of all combined edge cases
+Eedge-cases#tried = 0          | # of edge cases tried in current run
+Jseed = 8327188582731276920    | random seed to reproduce generated values
+
+
+Itimestamp = 2020-10-08T22:25:22.332467, CombinationTest:propertyTest2 = 
+K                              |-------------------jqwik-------------------
+7tries = 420                   | # of calls to property
+8checks = 420                  | # of not rejected calls
+Fgeneration = EXHAUSTIVE       | parameters are exhaustively generated
+6after-failure = PREVIOUS_SEED | use the previous seed
+8edge-cases#mode = MIXIN       | edge cases are mixed in
+=edge-cases#total = 0          | # of all combined edge cases
+Eedge-cases#tried = 0          | # of edge cases tried in current run
+Jseed = -8665395961873469045   | random seed to reproduce generated values
+
+

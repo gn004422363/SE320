@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.drexel.se320.BinarySearchTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2020-10-23T03:03:12" hostname="TiksMBP16Retina.T-mobile.com" time="0.042">
+  <properties/>
+  <testcase name="nullIntInputTest1()" classname="edu.drexel.se320.BinarySearchTest" time="0.027"/>
+  <testcase name="nullIntArrayTest()" classname="edu.drexel.se320.BinarySearchTest" time="0.001"/>
+  <testcase name="max()" classname="edu.drexel.se320.BinarySearchTest" time="0.001"/>
+  <testcase name="min()" classname="edu.drexel.se320.BinarySearchTest" time="0.001"/>
+  <testcase name="integerInputTest()" classname="edu.drexel.se320.BinarySearchTest" time="0.001"/>
+  <testcase name="notFoundTest()" classname="edu.drexel.se320.BinarySearchTest" time="0.001"/>
+  <testcase name="stringInputTest()" classname="edu.drexel.se320.BinarySearchTest" time="0.0"/>
+  <testcase name="intDuplicateTest()" classname="edu.drexel.se320.BinarySearchTest" time="0.005"/>
+  <testcase name="stirngDuplicateTest()" classname="edu.drexel.se320.BinarySearchTest" time="0.0"/>
+  <testcase name="nullStringInputTest()" classname="edu.drexel.se320.BinarySearchTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
